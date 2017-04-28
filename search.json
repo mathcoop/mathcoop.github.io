@@ -1,43 +1,13 @@
+---
+---
 [
-	
+	{% for post in site.posts %}
 		{
-		  "title"      : "Magical Mathematics",
-		  "category"   : "pres",
-		  "url"        : "http://mathcoop.github.io/pres/magical/",
-		  "date"       : "2015-01-05 00:00:00 -0500",
-		  "shortdate"  : "January 05, 2015"
-		} ,
-	
-		{
-		  "title"      : "What is curvature?",
-		  "category"   : "pres",
-		  "url"        : "http://mathcoop.github.io/pres/curvature/",
-		  "date"       : "2015-01-04 00:00:00 -0500",
-		  "shortdate"  : "January 04, 2015"
-		} ,
-	
-		{
-		  "title"      : "Takeaway Games",
-		  "category"   : "pres",
-		  "url"        : "http://mathcoop.github.io/pres/takeaway/",
-		  "date"       : "2015-01-03 00:00:00 -0500",
-		  "shortdate"  : "January 03, 2015"
-		} ,
-	
-		{
-		  "title"      : "When do small changes matter?",
-		  "category"   : "pres",
-		  "url"        : "http://mathcoop.github.io/pres/small-changes/",
-		  "date"       : "2015-01-02 00:00:00 -0500",
-		  "shortdate"  : "January 02, 2015"
-		} ,
-	
-		{
-		  "title"      : "Other",
-		  "category"   : "pres",
-		  "url"        : "http://mathcoop.github.io/pres/other/",
-		  "date"       : "2015-01-01 00:00:00 -0500",
-		  "shortdate"  : "January 01, 2015"
-		} 
-	
+		  "title"      : "{{ post.title | escape }}",
+		  "category"   : "{{ post.category }}",
+		  "url"        : "{{ site.url }}{{ post.url }}",
+		  "date"       : "{{ post.date }}",
+		  "shortdate"  : "{{ post.date | date: '%B %d, %Y' }}"
+		} {% if forloop.last %}{% else %},{% endif %}
+	{% endfor %}
 ]

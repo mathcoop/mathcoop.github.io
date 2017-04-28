@@ -1,0 +1,24 @@
+<div class="navlist-wrap">
+	<ul id="navlist">
+		{% for link in site.links %}
+		<li>
+			{% if link.external %}
+				<a href="{{ link.url }}" id="link.title">{{ link.title }}</a>
+			{% else %}
+				<a id="{{ link.title }}" href="{{ site.url }}{{ link.url }}">{{ link.title }}</a>
+			{% endif %} 
+		</li>
+		{% endfor %}
+	</ul>
+</div>
+
+<div class="navigation-wrapper">
+
+	<div id='parent'>
+      <a href="/"><header class="entry-header"><h1 class="entry-title">{% if page.headline %}{{ page.headline }}{% else %}{{ site.title }}{% endif %}</h1> 
+      </header>	</a>
+	</div>​
+	
+</div><!-- /.navigation-wrapper -->
+
+{% include browser-upgrade.html %}

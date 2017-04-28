@@ -1,58 +1,21 @@
+---
+layout: nil
+---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>http://mathcoop.github.io</loc>
+        <loc>{{ site.url }}</loc>
     </url>
     
-    
+    {% for page in site.pages %}
     <url>
-        <loc>http://mathcoop.github.io/404.html</loc>
+        <loc>{{ site.url }}{{ page.url }}</loc>
     </url>
-    
-    <url>
-        <loc>http://mathcoop.github.io/about/</loc>
-    </url>
-    
-    <url>
-        <loc>http://mathcoop.github.io/feed.xml</loc>
-    </url>
-    
-    <url>
-        <loc>http://mathcoop.github.io/index.html</loc>
-    </url>
-    
-    <url>
-        <loc>http://mathcoop.github.io/people/</loc>
-    </url>
-    
-    <url>
-        <loc>http://mathcoop.github.io/search.json</loc>
-    </url>
-    
-    <url>
-        <loc>http://mathcoop.github.io/sitemap.xml</loc>
-    </url>
-    
+    {% endfor %}
 
-    
+    {% for post in site.posts %}
     <url>
-        <loc>http://mathcoop.github.io/pres/magical/</loc>
+        <loc>{{ site.url }}{{ post.url }}</loc>
     </url>
-    
-    <url>
-        <loc>http://mathcoop.github.io/pres/curvature/</loc>
-    </url>
-    
-    <url>
-        <loc>http://mathcoop.github.io/pres/takeaway/</loc>
-    </url>
-    
-    <url>
-        <loc>http://mathcoop.github.io/pres/small-changes/</loc>
-    </url>
-    
-    <url>
-        <loc>http://mathcoop.github.io/pres/other/</loc>
-    </url>
-    
+    {% endfor %}
 </urlset>
